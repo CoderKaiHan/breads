@@ -6,6 +6,8 @@ const app = express();
 
 //MIDDLEWARE
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: true}));
+
 
 app.get('/',(req,res)=>{
     res.send('This is a cool application about breads!');
