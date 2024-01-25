@@ -15,9 +15,10 @@ function New () {
           />
           <label htmlFor="image">Image</label>
           <input
-            type="text"
+            type="url"
             name="image"
-            id="image"/>
+            id="image"
+            />
           <label htmlFor="hasGluten">Has Gluten?</label>
           <input
             type="checkbox"
