@@ -1,11 +1,15 @@
+// DEPENDENCIES
 const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
+const methodOverride = require('method-override');
 
 require('dotenv').config();
+mongoose.connect(process.env.MONGO_URI);
 
-const app = express();
 
-// DEPENDENCIES
-const methodOverride = require('method-override');
+
+
 
 //MIDDLEWARE
 app.use(express.static('public'));
