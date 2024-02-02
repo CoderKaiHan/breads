@@ -2,8 +2,9 @@ body {
     background-color: floralwhite;
   }
   
-  img {
-    width: 50%;
+img {
+    width: 500px;
+    height:500px;
     display: block;
     margin: auto;
   }
