@@ -17,8 +17,17 @@ const breadSchema = new Schema({
 
 // helper methods 
 breadSchema.methods.getBakedBy = function(){
-  return `${this.name} was baked with love by ${this.baker}`
+  return `${this.name} was baked with love by ${this.baker.name}, who has been with us since ${this.baker.startDate.getFullYear()}.`
 }
+// breadSchema.methods.getBakedBy = function(){
+//   if (!this.baker) {
+//     return `${this.name} was baked without a known baker.`;
+//   }
+//   if (!this.baker.name || !this.baker.startDate) {
+//     return `${this.name} was baked with love by an unknown baker.`;
+//   }
+//   return `${this.name} was baked with love by ${this.baker.name}, who has been with us since ${this.baker.startDate.getFullYear()}.`
+// }
 
 //static helper
 breadSchema.static.getBreadsByBaker = function(bakerName){

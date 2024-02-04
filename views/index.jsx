@@ -1,7 +1,7 @@
 const React = require('react');
 const Default = require('./layouts/default');
 
-function Index ({breads,title}) {
+function Index ({breads, title}) {
     return (
         <Default title={title}>
             <h2>Index Page</h2>
@@ -16,7 +16,9 @@ function Index ({breads,title}) {
                             {bread.name}
                         </a>
                         <br/>
-                        {bread.getBakedBy()}
+                        <p>
+                            {bread.getBakedBy()}
+                        </p>
                     </li>
                     )
                   })
