@@ -27,7 +27,11 @@ app.set('views',__dirname + '/views');
 app.set('view engine','jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
+//breads
 app.use('/breads', require('./controllers/breads_controller'));
+
+//bakers
+app.use('/bakers', require('./controllers/bakers_controller'));
 
 // 404 Page
 app.get('*', (req, res) => {

@@ -3,14 +3,15 @@ const mongoose = require('mongoose');
 // creating shorthand for the Schema constructor
 const { Schema } = mongoose;
 
+//schema
 const breadSchema = new Schema({
   name:{type:String, required:true},
   hasGluten:Boolean,
   image:{type:String, default:'http://placehold.it/500x500.png'},
   ingredients:{type:String},
   baker:{
-    type:String,
-    enum:['Rachel','Monica','Chandler','Ross', 'Joey', 'Phoebe']
+    type: Schema.Types.ObjectId,
+    ref: 'Baker'
   }
 });
 
