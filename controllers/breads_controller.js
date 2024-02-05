@@ -6,14 +6,17 @@ const Baker = require('../models/baker');
 
 //INDEX
 breads.get('/',(req,res)=>{
-    Bread.find()
-      .populate('baker')
+  Baker.find()
+    .then(foundBakers => {
+      Bread.find()
       .then(foundBreads => {
         res.render('index',{
           breads:foundBreads,
+          bakers:foundBakers,
           title:'Index Page'
         });
       });
+    });
 });
 
 // NEW

@@ -19,6 +19,8 @@ const breadSchema = new Schema({
 breadSchema.methods.getBakedBy = function(){
   return `${this.name} was baked with love by ${this.baker.name}, who has been with us since ${this.baker.startDate.getFullYear()}.`
 }
+
+
 // breadSchema.methods.getBakedBy = function(){
 //   if (!this.baker) {
 //     return `${this.name} was baked without a known baker.`;
