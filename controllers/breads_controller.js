@@ -5,17 +5,13 @@ const Bread = require('../models/bread');
 const Baker = require('../models/baker');
 
 //INDEX
-breads.get('/',(req,res)=>{
-  Baker.find()
-    .then(foundBakers => {
-      Bread.find()
-      .then(foundBreads => {
-        res.render('index',{
-          breads:foundBreads,
-          bakers:foundBakers,
-          title:'Index Page'
-        });
-      });
+breads.get('/', async (req,res)=>{
+  const foundBakers = await Baker.find();
+  const foundBreads = await Bread.find();
+  res.render('index',{
+    breads:foundBreads,
+    bakers:foundBakers,
+    title:'Index Page'
     });
 });
 
