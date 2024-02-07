@@ -52,5 +52,16 @@ baker.get('/:id',(req,res) =>{
       });
 });
 
+//Delete
+baker.delete('/:id', (req, res) => {
+  Baker.findByIdAndDelete(req.params.id)
+  .then(deletedBaker => {
+    res.status(303).redirect('/breads')
+  })
+  .catch(err => {
+    res.send('error404');
+  })
+});
+
 // export
 module.exports = baker;                    
